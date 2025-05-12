@@ -41,6 +41,7 @@
       width: 320px;
       height: 50px;
       overflow: hidden;
+      display: none; /* oculta por padrão */
     }
 
     .ad-container iframe {
@@ -56,16 +57,11 @@
   <img class="center-image" src="https://i.postimg.cc/vHpQsps7/468225374-1728951201196597-6234305018889006095-n-removebg-preview.png" alt="...">
   <div id="countdown">10</div>
 
-  <!-- Container fixo para o banner -->
-  <div class="ad-container">
-    <div id="container-eebd2e3408736e2b0f1e1437f2e47118"></div>
-  </div>
-
-  <!-- Script do anúncio (NATIVO) -->
-  <script async="async" data-cfasync="false" src="//pl26628035.profitableratecpm.com/eebd2e3408736e2b0f1e1437f2e47118/invoke.js"></script>
+  <!-- Banner 320x50 controlado -->
+  <div class="ad-container" id="mobile-ad-slot"></div>
 
   <script>
-    // Redirecionamento com contagem
+    // Timer
     const urlParams = new URLSearchParams(window.location.search);
     const finalURL = urlParams.get('url') || 'https://google.com';
 
@@ -80,6 +76,37 @@
         window.location.href = finalURL;
       }
     }, 1000);
+
+    // Carregar anúncio apenas se for tela pequena (<= 480px)
+    if (window.innerWidth <= 480) {
+      const adContainer = document.getElementById('mobile-ad-slot');
+      adContainer.style.display = "block"; // exibe o container limitado
+
+      const iframe = document.createElement("iframe");
+      iframe.src = "https://www.highperformanceformat.com/b3ca7bfe0e9e2044f803ff82858c1eea/invoke.js";
+      iframe.width = "320";
+      iframe.height = "50";
+      iframe.setAttribute("scrolling", "no");
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allowtransparency", "true");
+
+      // Garante o script correto é carregado como HTML, não JS bruto
+      const scriptTag = document.createElement('script');
+      scriptTag.innerHTML = `
+        atOptions = {
+          'key' : 'b3ca7bfe0e9e2044f803ff82858c1eea',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      `;
+      adContainer.appendChild(scriptTag);
+
+      const invokeScript = document.createElement('script');
+      invokeScript.src = "//www.highperformanceformat.com/b3ca7bfe0e9e2044f803ff82858c1eea/invoke.js";
+      adContainer.appendChild(invokeScript);
+    }
   </script>
 
 </body>
