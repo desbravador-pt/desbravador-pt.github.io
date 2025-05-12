@@ -52,18 +52,10 @@
   <img class="center-image" src="https://i.postimg.cc/vHpQsps7/468225374-1728951201196597-6234305018889006095-n-removebg-preview.png" alt="...">
   <div id="countdown">10</div>
 
-  <div class="ad-box">
-    <script>
-      (function(d,z,s){
-        s.src='https://'+d+'/400/'+z;
-        try {
-          (document.body||document.documentElement).appendChild(s);
-        } catch(e) {}
-      })('vemtoutcheeg.com',9323152,document.createElement('script'));
-    </script>
-  </div>
+  <div class="ad-box" id="ad-container"></div>
 
   <script>
+    // Iniciar contagem regressiva
     const urlParams = new URLSearchParams(window.location.search);
     const finalURL = urlParams.get('url') || 'https://google.com';
 
@@ -78,6 +70,13 @@
         window.location.href = finalURL;
       }
     }, 1000);
+
+    // Injetar o script de monetização após o carregamento da página
+    window.onload = function() {
+      const s = document.createElement('script');
+      s.src = 'https://vemtoutcheeg.com/400/9323152';
+      document.getElementById('ad-container').appendChild(s);
+    };
   </script>
 
 </body>
