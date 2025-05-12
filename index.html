@@ -29,17 +29,24 @@
       margin-bottom: 10px;
     }
 
-    .ad-container {
-      width: 300px;
-      height: 250px;
-      margin-top: 20px;
-    }
-
     #countdown {
       font-size: 24px;
       font-weight: bold;
       color: #333;
       margin-top: 10px;
+    }
+
+    .ad-container {
+      width: 300px;
+      height: 250px;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+
+    .ad-container iframe {
+      width: 300px !important;
+      height: 250px !important;
+      border: none;
     }
   </style>
 </head>
@@ -49,21 +56,11 @@
   <img class="center-image" src="https://i.postimg.cc/vHpQsps7/468225374-1728951201196597-6234305018889006095-n-removebg-preview.png" alt="...">
   <div id="countdown">10</div>
 
-  <!-- Banner 300x250 incorporado abaixo da contagem -->
-  <div class="ad-container">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : 'a486dfcd97f2635687705552275d0b97',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-      };
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/a486dfcd97f2635687705552275d0b97/invoke.js"></script>
-  </div>
+  <!-- Anúncio 300x250 fixo, sem tela cheia -->
+  <div class="ad-container" id="ad-slot"></div>
 
   <script>
+    // Timer
     const urlParams = new URLSearchParams(window.location.search);
     const finalURL = urlParams.get('url') || 'https://google.com';
 
@@ -78,6 +75,22 @@
         window.location.href = finalURL;
       }
     }, 1000);
+
+    // Carrega o banner no tamanho certo
+    const script1 = document.createElement('script');
+    script1.innerHTML = `
+      atOptions = {
+        'key' : 'a486dfcd97f2635687705552275d0b97',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    `;
+    const script2 = document.createElement('script');
+    script2.src = "//www.highperformanceformat.com/a486dfcd97f2635687705552275d0b97/invoke.js";
+    document.getElementById('ad-slot').appendChild(script1);
+    document.getElementById('ad-slot').appendChild(script2);
   </script>
 
 </body>
