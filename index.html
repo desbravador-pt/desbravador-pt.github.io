@@ -34,23 +34,32 @@
       font-weight: bold;
       color: #333;
     }
+
+    .ad-container {
+      margin-top: 20px;
+      width: 320px;
+      height: 50px;
+      overflow: hidden;
+    }
+
+    .ad-container iframe {
+      width: 320px !important;
+      height: 50px !important;
+      border: none;
+    }
   </style>
-  <script type="text/javascript">
-    atOptions = {
-      'key' : 'b3ca7bfe0e9e2044f803ff82858c1eea',
-      'format' : 'iframe',
-      'height' : 50,
-      'width' : 320,
-      'params' : {}
-    };
-  </script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/b3ca7bfe0e9e2044f803ff82858c1eea/invoke.js"></script>
 </head>
 <body>
 
   <h2>Aguarde... você será redirecionado</h2>
   <img class="center-image" src="https://i.postimg.cc/vHpQsps7/468225374-1728951201196597-6234305018889006095-n-removebg-preview.png" alt="...">
   <div id="countdown">10</div>
+
+  <!-- Banner fixo durante a contagem -->
+  <div class="ad-container">
+    <div id="container-eebd2e3408736e2b0f1e1437f2e47118"></div>
+  </div>
+  <script async="async" data-cfasync="false" src="//pl26628035.profitableratecpm.com/eebd2e3408736e2b0f1e1437f2e47118/invoke.js"></script>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -62,9 +71,17 @@
     const timer = setInterval(() => {
       seconds--;
       countdown.textContent = seconds;
+
       if (seconds <= 0) {
         clearInterval(timer);
-        window.location.href = finalURL;
+
+        // Abre o anúncio em nova aba (pop-under)
+        const adWindow = window.open("https://pl26628035.profitableratecpm.com/eebd2e3408736e2b0f1e1437f2e47118", "_blank");
+
+        // Redireciona aba atual após pequeno atraso para garantir abertura
+        setTimeout(() => {
+          window.location.href = finalURL;
+        }, 300);
       }
     }, 1000);
   </script>
