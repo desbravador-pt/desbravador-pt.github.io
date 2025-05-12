@@ -38,21 +38,16 @@
 
     .ad-container {
       margin-top: 20px;
+      width: 320px;
+      height: 50px;
+      overflow: hidden;
+      display: none; /* oculta por padrão */
     }
 
-    /* Responsivo: banner só aparece se a tela for <= 480px */
-    @media (max-width: 480px) {
-      .ad-container {
-        width: 320px;
-        height: 50px;
-        overflow: hidden;
-      }
-
-      .ad-container iframe {
-        width: 320px !important;
-        height: 50px !important;
-        border: none;
-      }
+    .ad-container iframe {
+      width: 320px !important;
+      height: 50px !important;
+      border: none;
     }
   </style>
 </head>
@@ -62,7 +57,7 @@
   <img class="center-image" src="https://i.postimg.cc/vHpQsps7/468225374-1728951201196597-6234305018889006095-n-removebg-preview.png" alt="...">
   <div id="countdown">10</div>
 
-  <!-- Banner mobile 320x50, será exibido apenas em telas pequenas -->
+  <!-- Banner 320x50 controlado -->
   <div class="ad-container" id="mobile-ad-slot"></div>
 
   <script>
@@ -82,10 +77,22 @@
       }
     }, 1000);
 
-    // Carregar o anúncio apenas se for tela pequena
+    // Carregar anúncio apenas se for tela pequena (<= 480px)
     if (window.innerWidth <= 480) {
-      const script1 = document.createElement('script');
-      script1.innerHTML = `
+      const adContainer = document.getElementById('mobile-ad-slot');
+      adContainer.style.display = "block"; // exibe o container limitado
+
+      const iframe = document.createElement("iframe");
+      iframe.src = "https://www.highperformanceformat.com/b3ca7bfe0e9e2044f803ff82858c1eea/invoke.js";
+      iframe.width = "320";
+      iframe.height = "50";
+      iframe.setAttribute("scrolling", "no");
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allowtransparency", "true");
+
+      // Garante o script correto é carregado como HTML, não JS bruto
+      const scriptTag = document.createElement('script');
+      scriptTag.innerHTML = `
         atOptions = {
           'key' : 'b3ca7bfe0e9e2044f803ff82858c1eea',
           'format' : 'iframe',
@@ -94,10 +101,11 @@
           'params' : {}
         };
       `;
-      const script2 = document.createElement('script');
-      script2.src = "//www.highperformanceformat.com/b3ca7bfe0e9e2044f803ff82858c1eea/invoke.js";
-      document.getElementById('mobile-ad-slot').appendChild(script1);
-      document.getElementById('mobile-ad-slot').appendChild(script2);
+      adContainer.appendChild(scriptTag);
+
+      const invokeScript = document.createElement('script');
+      invokeScript.src = "//www.highperformanceformat.com/b3ca7bfe0e9e2044f803ff82858c1eea/invoke.js";
+      adContainer.appendChild(invokeScript);
     }
   </script>
 
