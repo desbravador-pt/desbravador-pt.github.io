@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Ads...</title>
+  <title>Redirecionamento</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -18,7 +18,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 20px 10px 60px;
+      padding: 40px 10px 60px; /* espaço extra no topo */
     }
 
     h2 {
@@ -32,11 +32,24 @@
       margin-bottom: 10px;
     }
 
+    .instagram-link {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #3b5998;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .instagram-link:hover {
+      text-decoration: underline;
+      color: #e1306c;
+    }
+
     .progress-ring {
       position: relative;
-      width: 80px;
-      height: 80px;
-      margin-bottom: 5px;
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
     }
 
     .progress-ring svg {
@@ -45,7 +58,7 @@
 
     .progress-ring circle {
       fill: none;
-      stroke-width: 6;
+      stroke-width: 4;
       stroke-linecap: round;
     }
 
@@ -63,22 +76,67 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 20px;
+      font-size: 14px;
       font-weight: bold;
       color: #333;
     }
 
-    .ad-container {
-      margin: 10px 0 20px;
-      width: 320px;
-      height: 50px;
-      overflow: hidden;
+    .scrollable-buttons {
+      max-height: 300px;
+      overflow-y: auto;
+      width: 100%;
+      padding-right: 5px;
+      margin-top: 10px;
     }
 
-    .ad-container iframe {
-      width: 320px !important;
-      height: 50px !important;
-      border: none;
+    .scrollable-buttons::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollable-buttons::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 320px;
+      background-color: rgba(200, 200, 200, 0.3);
+      border-radius: 12px;
+      padding: 10px 15px;
+      margin: 8px auto;
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .link-button:hover {
+      background-color: rgba(180, 180, 180, 0.4);
+    }
+
+    .link-button img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .link-button .text {
+      flex: 1;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .link-button .arrow {
+      font-size: 16px;
+      margin-left: 12px;
+      flex-shrink: 0;
     }
 
     footer {
@@ -115,20 +173,40 @@
 <body>
 
   <h2>Aguarde contagem para ser redirecionado</h2>
+
   <img class="center-image" src="https://i.postimg.cc/vHpQsps7/468225374-1728951201196597-6234305018889006095-n-removebg-preview.png" alt="...">
 
+  <a class="instagram-link" href="https://www.instagram.com/desbravador.pt" target="_blank">@desbravador.pt</a>
+
   <div class="progress-ring">
-    <svg width="80" height="80">
-      <circle class="bg" cx="40" cy="40" r="34" />
-      <circle class="progress" cx="40" cy="40" r="34" stroke-dasharray="213.6" stroke-dashoffset="0" />
+    <svg width="40" height="40">
+      <circle class="bg" cx="20" cy="20" r="16" />
+      <circle class="progress" cx="20" cy="20" r="16" stroke-dasharray="100.48" stroke-dashoffset="0" />
     </svg>
     <div id="countdown">10</div>
   </div>
 
-  <div class="ad-container">
-    <div id="container-eebd2e3408736e2b0f1e1437f2e47118"></div>
+  <!-- Lista rolável de botões 
+  <div class="scrollable-buttons">
+    <a class="link-button" href="https://wa.me/5518996013978" target="_blank">
+      <img src="https://i.postimg.cc/vHpQsps7/468225374-1728951201196597-6234305018889006095-n-removebg-preview.png" alt="WhatsApp">
+      <span class="text">Clique para falar comigo</span>
+      <span class="arrow">></span>
+    </a>
+
+    <a class="link-button" href="https://example.com" target="_blank">
+      <img src="https://stories.gupy.io/atendente-a-arte-de-encantar/assets/2.jpeg" alt="Outro">
+      <span class="text">Outro botão editável</span>
+      <span class="arrow">></span>
+    </a>
+
+    <a class="link-button" href="#" target="_blank">
+      <img src="https://via.placeholder.com/36" alt="Exemplo">
+      <span class="text">Mais um botão</span>
+      <span class="arrow">></span>
+    </a>
+  -->  
   </div>
-  <script async data-cfasync="false" src="//pl26628035.profitableratecpm.com/eebd2e3408736e2b0f1e1437f2e47118/invoke.js"></script>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -137,7 +215,7 @@
     let seconds = 10;
     const countdown = document.getElementById('countdown');
     const progressCircle = document.querySelector('.progress-ring .progress');
-    const radius = 34;
+    const radius = 16;
     const circumference = 2 * Math.PI * radius;
     progressCircle.style.strokeDasharray = `${circumference}`;
 
@@ -160,15 +238,11 @@
 
       const percent = (timePassed / seconds) * 100;
       setProgress(percent);
-
       progressCircle.style.stroke = getRandomColor();
 
       if (remaining <= 0) {
         clearInterval(interval);
-        window.open("https://pl26628035.profitableratecpm.com/eebd2e3408736e2b0f1e1437f2e47118", "_blank");
-        setTimeout(() => {
-          window.location.href = finalURL;
-        }, 300);
+        window.location.href = finalURL;
       }
     }, 1000);
   </script>
