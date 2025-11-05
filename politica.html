@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Política de Privacidade — Me Segue!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Política de Privacidade do aplicativo Me Segue!">
+  <meta name="theme-color" content="#DD2A7B">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#DD2A7B; --purple:#8134AF; --blue:#515BD4; --orange:#F58529;
+      --bg:#0B0B10; --muted:#B9BCD3; --card:#12121A; --glass:rgba(255,255,255,.06);
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25);
+      --gradient:linear-gradient(135deg,var(--orange),var(--pink) 35%,var(--purple) 65%,var(--blue));
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:#fff;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    a{color:#A6D3FF;text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1000px;margin:0 auto;padding:0 20px}
+    .nav{position:sticky;top:0;z-index:10;background:rgba(11,11,16,.8);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:12px;background:var(--gradient);box-shadow:var(--shadow)}
+    .brand-name{font-family:Pacifico,cursive;font-size:22px}
+    header{padding:56px 0 24px;border-bottom:1px solid rgba(255,255,255,.08);
+      background: radial-gradient(900px 700px at 80% -200px, rgba(221,42,123,.25), transparent 60%),
+                  radial-gradient(800px 600px at 0% 0%, rgba(129,52,175,.25), transparent 60%);}
+    h1{font-size:clamp(28px,5vw,44px);margin:0 0 10px}
+    .sub{color:var(--muted);margin:0}
+    main{padding:28px 0 64px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;margin:16px 0}
+    h2{font-size:22px;margin:10px 0 8px}
+    p,li{color:#EDEDF6;line-height:1.7}
+    .tag{display:inline-block;background:var(--glass);border:1px solid rgba(255,255,255,.1);
+      color:#EDEDF6;border-radius:999px;padding:6px 10px;font-size:12px;margin-top:8px}
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:var(--muted);font-size:14px}
+    .btn{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;
+      background:var(--gradient);color:#fff;text-decoration:none;border:0}
+    .btn:hover{filter:brightness(1.05)}
+    code{background:#0f0f16;padding:2px 6px;border-radius:6px;border:1px solid rgba(255,255,255,.08)}
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo"></div>
+        <div class="brand-name">Me Segue!</div>
+      </div>
+      <a class="btn" href="/mesegue" style="font-size:14px">← Voltar ao site</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <h1>Política de Privacidade</h1>
+      <p class="sub">Última atualização: <span id="lastUpdated">2025-01-01</span></p>
+      <span class="tag">LGPD • GDPR • Android</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="card">
+      <h2>1. Quem somos</h2>
+      <p>O aplicativo <strong>Me Segue!</strong> (&ldquo;App&rdquo;) é oferecido por <strong><!-- TODO --> Seu Nome/Empresa</strong> (&ldquo;Nós&rdquo;, &ldquo;Nosso&rdquo;), responsável pelo tratamento de dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD — Lei 13.709/2018) e Regulamento Europeu (GDPR), quando aplicável.</p>
+      <p>Contato do Encarregado/DPO: <a href="mailto:<!-- TODO -->contato@seu-dominio.com"><!-- TODO -->contato@seu-dominio.com</a></p>
+    </div>
+
+    <div class="card">
+      <h2>2. Quais dados coletamos</h2>
+      <p>Podemos coletar e tratar as seguintes categorias:</p>
+      <ul>
+        <li><strong>Dados técnicos</strong>: endereço IP, tipo de dispositivo, versão do sistema, idioma, identificadores de publicidade (ex.: AAID), logs de erro e desempenho.</li>
+        <li><strong>Dados de uso</strong>: telas acessadas, tempo de sessão, cliques em botões (ex.: &ldquo;Seguir no Instagram&rdquo;), frequência de uso.</li>
+        <li><strong>Dados voluntários</strong>: conteúdo enviado em <em>denúncias</em> (texto livre). Evite incluir dados sensíveis nesses campos.</li>
+      </ul>
+      <p>O App <strong>não solicita login</strong> e <strong>não lê</strong> informações da sua conta do Instagram.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Finalidades do tratamento</h2>
+      <ul>
+        <li>Operar as funcionalidades do App (exibir perfis e rotação a cada 15s).</li>
+        <li>Garantir segurança, moderação (<code>val=1</code> para remover perfis indevidos) e prevenção a abuso.</li>
+        <li>Medição de audiência e melhoria contínua.</li>
+        <li>Exibição de anúncios para manter o serviço gratuito.</li>
+        <li>Atendimento e suporte quando você nos contata.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>4. Base legal</h2>
+      <p>Tratamos dados com base em <strong>legítimo interesse</strong> (art. 7º, IX, LGPD) para funcionamento, segurança e métricas; e <strong>consentimento</strong> quando exigido por terceiros (ex.: personalização de anúncios).</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Compartilhamento com terceiros</h2>
+      <ul>
+        <li><strong>AdMob / Google</strong> (publicidade e relatórios). Política: <a href="https://policies.google.com/technologies/ads?hl=pt-BR" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></li>
+        <li><strong>Serviços de hospedagem</strong> do backend (para processar solicitações do App).</li>
+        <li>Autoridades, quando necessário para cumprir leis ou ordens judiciais.</li>
+      </ul>
+      <p>Não vendemos dados pessoais.</p>
+    </div>
+
+    <div class="card">
+      <h2>6. Retenção e segurança</h2>
+      <p>Mantemos os dados pelo tempo necessário às finalidades e obrigações legais. Adotamos medidas técnicas e organizacionais para proteger suas informações, incluindo criptografia em trânsito (HTTPS) e controles de acesso. Nenhum método é 100% seguro, mas buscamos as melhores práticas.</p>
+    </div>
+
+    <div class="card">
+      <h2>7. Seus direitos</h2>
+      <p>Nos termos da LGPD/GDPR, você pode solicitar: confirmação de tratamento, acesso, correção, anonimização, portabilidade, exclusão e informações sobre compartilhamento. Para exercer, contate: <a href="mailto:<!-- TODO -->privacidade@seu-dominio.com"><!-- TODO -->privacidade@seu-dominio.com</a>.</p>
+      <p>Você também pode <strong>redefinir o AAID</strong> (ID de publicidade) nas configurações do Android e limitar anúncios personalizados.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. Cookies e identificadores</h2>
+      <p>Não usamos cookies no App, mas os <strong>SDKs de terceiros</strong> podem utilizar identificadores e armazenar informações conforme suas próprias políticas.</p>
+    </div>
+
+    <div class="card">
+      <h2>9. Crianças e adolescentes</h2>
+      <p>O App não é destinado a menores de 13 anos. Se você é responsável por um menor e acredita que houve coleta indevida, contate-nos para remoção.</p>
+    </div>
+
+    <div class="card">
+      <h2>10. Transferências internacionais</h2>
+      <p>Fornecedores podem processar dados fora do seu país. Nessas hipóteses, adotamos salvaguardas adequadas e contratos com cláusulas de proteção de dados.</p>
+    </div>
+
+    <div class="card">
+      <h2>11. Permissões do Android</h2>
+      <p>O App pode solicitar algumas permissões para funcionar corretamente:</p>
+      <ul>
+        <li><code>INTERNET</code> e <code>ACCESS_NETWORK_STATE</code>: acesso à API e anúncios.</li>
+        <li><code>QUERY_ALL_PACKAGES</code> (se aplicável): apenas para abrir o Instagram se instalado.</li>
+        <li><code>POST_NOTIFICATIONS</code> (Android 13+ — se aplicável): enviar avisos (opcional).</li>
+      </ul>
+      <p><!-- Remova as que não usar no seu Manifest. --></p>
+    </div>
+
+    <div class="card">
+      <h2>12. Denúncias no App</h2>
+      <p>Ao enviar uma denúncia, armazenamos o texto e o IP para fins de auditoria e segurança. Perfis denunciados podem ser removidos da rotação (marcados como <code>val=1</code>).</p>
+    </div>
+
+    <div class="card">
+      <h2>13. Alterações desta política</h2>
+      <p>Podemos atualizar esta Política periodicamente. Publicaremos a versão atual nesta página com a data de &ldquo;Última atualização&rdquo; no topo.</p>
+    </div>
+
+    <div class="card">
+      <h2>14. Contato</h2>
+      <p>Dúvidas ou solicitações sobre privacidade:</p>
+      <ul>
+        <li>E-mail: <a href="mailto:<!-- TODO -->privacidade@seu-dominio.com"><!-- TODO -->privacidade@seu-dominio.com</a></li>
+        <li>WhatsApp (suporte): <a href="https://wa.me/<!-- TODO -->5518996013978" target="_blank" rel="noopener">+55 (18) 99601-3978</a></li>
+        <li>Endereço (opcional): <!-- TODO --> Rua/ Cidade / País</li>
+      </ul>
+    </div>
+
+    <p style="color:var(--muted);font-size:13px">Observação: esta página é informativa e não substitui aconselhamento jurídico. Ajuste os pontos marcados como TODO conforme a sua realidade.</p>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Me Segue! • Todos os direitos reservados.</div>
+      <div><a href="/">Voltar ao site</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // atualiza ano e data padrão
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // se quiser setar a data automaticamente, descomente abaixo:
+    // document.getElementById('lastUpdated').textContent = new Date().toISOString().slice(0,10);
+  </script>
+</body>
+</html>
