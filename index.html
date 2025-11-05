@@ -6,118 +6,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Me Segue! — Descubra e conecte com novos perfis. Baixe o APK e comece agora." />
   <meta name="theme-color" content="#DD2A7B" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
       --pink:#DD2A7B; --purple:#8134AF; --blue:#515BD4; --orange:#F58529;
       --bg:#0B0B10; --muted:#B9BCD3; --card:#12121A;
-      --radius:18px; --shadow:0 14px 40px rgba(0,0,0,.35);
+      --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.3);
       --gradient:linear-gradient(135deg,var(--orange),var(--pink) 35%,var(--purple) 65%,var(--blue));
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:#fff;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
-    a{color:#A6D3FF;text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1080px;margin:0 auto;padding:0 18px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      background:var(--bg);
+      color:#fff;
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      line-height:1.6;
+      font-size:15px;
+    }
+    a{color:#A6D3FF;text-decoration:none;transition:opacity .2s}
+    a:hover{opacity:.85}
+
+    .container{max-width:980px;margin:0 auto;padding:0 20px}
 
     /* NAV */
-    .nav{position:sticky;top:0;z-index:20;background:rgba(11,11,16,.84);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:40px;height:40px;border-radius:12px;background:var(--gradient);box-shadow:var(--shadow)}
-    .brand-name{font-family:Pacifico,cursive;font-size:22px}
+    .nav{
+      position:sticky;top:0;z-index:10;
+      background:rgba(11,11,16,.85);backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      height:58px;
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:34px;height:34px;
+      border-radius:10px;
+      background:var(--gradient);
+      box-shadow:var(--shadow);
+    }
+    .brand-name{
+      font-family:Pacifico,cursive;
+      font-size:20px;
+      letter-spacing:.3px;
+    }
 
     /* HERO */
     header{
-      padding:44px 0 28px;
+      padding:48px 0 32px;
       background:
-        radial-gradient(900px 700px at 85% -180px, rgba(221,42,123,.28), transparent 55%),
-        radial-gradient(800px 600px at -10% 0%, rgba(129,52,175,.28), transparent 60%);
+        radial-gradient(900px 700px at 85% -180px, rgba(221,42,123,.25), transparent 55%),
+        radial-gradient(800px 600px at -10% 0%, rgba(129,52,175,.25), transparent 60%);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
-    .hero{display:grid;grid-template-columns:1fr;gap:22px;align-items:center}
-    h1{font-size:clamp(28px,6vw,48px);line-height:1.12;margin:0 0 8px}
-    .sub{color:var(--muted);font-size:clamp(14px,2.8vw,18px);margin:0 0 12px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      gap:10px;padding:14px 18px;border-radius:14px;border:0;color:#fff;
-      font-weight:600;box-shadow:var(--shadow);transition:transform .08s ease;
-      min-height:48px;min-width:180px
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:28px;
+      align-items:center;
+      text-align:center;
     }
-    .btn:active{transform:scale(.98)}
+    h1{
+      font-size:clamp(22px,5vw,36px);
+      line-height:1.25;
+      margin-bottom:12px;
+    }
+    .sub{
+      color:var(--muted);
+      font-size:clamp(13px,2.8vw,16px);
+      margin-bottom:20px;
+    }
+    .cta{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:20px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 18px;
+      border-radius:12px;
+      border:0;
+      color:#fff;
+      font-weight:500;
+      font-size:14px;
+      letter-spacing:.3px;
+      box-shadow:var(--shadow);
+      transition:transform .1s ease;
+      min-height:42px;
+    }
+    .btn:active{transform:scale(.97)}
     .btn-primary{background:var(--gradient)}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);font-size:12px;color:#EDEDF6}
 
-    /* MOCKUP PHONE IMAGE */
+    /* MOCKUP */
     .mockup{
-      margin-top:16px;
-      display:flex;justify-content:center;
+      display:flex;
+      justify-content:center;
+      margin-top:10px;
+      margin-bottom:22px;
     }
     .mockup img{
       width:100%;
-      max-width:420px;
-      border-radius:24px;
+      max-width:360px;
+      border-radius:20px;
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 18px 50px rgba(0,0,0,.45);
+      box-shadow:0 16px 45px rgba(0,0,0,.4);
     }
 
-    /* FEATURE CARDS */
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin-top:6px;
+    }
+    .badge{
+      padding:5px 9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      font-size:11px;
+      color:#EDEDF6;
+    }
+
+    /* CARDS */
     .features{padding:28px 0}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      padding:18px 20px;
+      text-align:left;
     }
-    .card h3{margin:2px 0 6px;font-size:18px}
-    .card p{margin:0;color:#EDEDF6;opacity:.95;line-height:1.65}
+    .card h3{
+      font-size:16px;
+      margin-bottom:6px;
+      font-weight:600;
+    }
+    .card p{
+      color:#EDEDF6;
+      opacity:.9;
+      font-size:13px;
+      line-height:1.65;
+    }
 
     /* FAQ */
-    .faq{padding:12px 0 24px}
-    details{background:#0F0F16;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 14px}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:600}
+    .faq{padding:16px 0 36px}
+    h2{
+      font-size:18px;
+      text-align:center;
+      margin-bottom:14px;
+    }
+    details{
+      background:#0F0F16;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:10px;
+      padding:10px 12px;
+      font-size:13px;
+    }
+    details+details{margin-top:8px}
+    summary{cursor:pointer;font-weight:500;line-height:1.4}
     summary::-webkit-details-marker{display:none}
+    details p{margin-top:8px;color:#ddd;font-size:13px;line-height:1.6}
 
-    /* PRIVACY BUTTON AREA (BOTTOM) */
+    /* PRIVACY BUTTON */
     .bottom-actions{
-      padding:8px 0 22px;
-      display:flex;justify-content:center
+      padding:12px 0 26px;
+      display:flex;
+      justify-content:center;
     }
     .btn-ghost{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:12px;font-weight:600;
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#EDEDF6
+      padding:9px 16px;
+      border-radius:10px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      color:#EDEDF6;
+      font-size:13px;
+      font-weight:500;
     }
 
     /* FOOTER */
     footer{
       border-top:1px solid rgba(255,255,255,.08);
-      padding:18px 0;color:#BFC3D9;font-size:14px
+      padding:18px 0;
+      color:#BFC3D9;
+      font-size:13px;
+      text-align:center;
     }
 
     /* DESKTOP */
     @media (min-width:720px){
-      .hero{grid-template-columns:1.1fr .9fr}
+      .hero{text-align:left;grid-template-columns:1.1fr .9fr}
+      .mockup{justify-content:flex-start}
       .grid{grid-template-columns:repeat(3,1fr)}
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV (apenas marca) -->
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">
         <div class="logo"></div>
         <div class="brand-name">Me Segue!</div>
       </div>
-      <div></div>
     </div>
   </nav>
 
-  <!-- HERO -->
   <header>
     <div class="container hero">
       <div>
@@ -125,13 +227,11 @@
         <p class="sub">O app que conecta você a novos perfis do Instagram. Simples, leve e gratuito.</p>
 
         <div class="cta">
-          <!-- TROQUE O HREF PELO LINK REAL DO SEU APK -->
           <a class="btn btn-primary" href="https://seu-dominio.com/app/MeSegue.apk" download>
             📥 Download APK direto
           </a>
         </div>
 
-        <!-- IMAGEM DO TELEMÓVEL (troque o src abaixo pela sua imagem) -->
         <div class="mockup">
           <img src="https://elizeusantos.pt/ig_fotos/mesegue3.jpg" alt="Tela do app Me Segue! em um telemóvel" loading="lazy">
         </div>
@@ -139,21 +239,19 @@
         <div class="badges">
           <span class="badge">Atualizado</span>
           <span class="badge">Timer de 15s</span>
-          <span class="badge">Denúncia com 1 toque</span>
+          <span class="badge">Denúncia 1 toque</span>
           <span class="badge">Ads compatíveis</span>
         </div>
       </div>
 
-      <!-- bloco lateral curto -->
       <div class="card" aria-hidden="true">
-        <h3 style="margin-top:0">Por que o Me Segue!?</h3>
+        <h3>Por que o Me Segue!?</h3>
         <p>Mostramos perfis com foto e evitamos repetição por período. Você segue quem curtir — simples assim.</p>
       </div>
     </div>
   </header>
 
-  <!-- FEATURES -->
-  <section class="features" id="como-funciona">
+  <section class="features">
     <div class="container">
       <div class="grid">
         <div class="card">
@@ -162,52 +260,49 @@
         </div>
         <div class="card">
           <h3>Seguir em 1 toque</h3>
-          <p>Abre o perfil no Instagram com um toque. Você decide se quer seguir.</p>
+          <p>Abra o perfil no Instagram em segundos e siga quem desejar.</p>
         </div>
         <div class="card">
           <h3>Moderação rápida</h3>
-          <p>Denuncie perfis indevidos. Nosso sistema remove da rotação para todos.</p>
+          <p>Denuncie perfis indevidos. Nosso sistema remove da rotação automaticamente.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
+  <section class="faq">
     <div class="container">
-      <h2 style="margin:4px 0 12px">Perguntas frequentes</h2>
+      <h2>Perguntas frequentes</h2>
 
       <details>
         <summary>O app pede login do Instagram?</summary>
-        <p style="margin:10px 0 0">Não. Não solicitamos seu login nem coletamos suas credenciais do Instagram.</p>
+        <p>Não. O Me Segue! não solicita nem armazena credenciais do Instagram.</p>
       </details>
 
       <details>
         <summary>Como vocês escolhem os perfis?</summary>
-        <p style="margin:10px 0 0">Mostramos perfis com foto e marcados como exibíveis (val=0), priorizando os que nunca foram mostrados e respeitando um intervalo para evitar repetição.</p>
+        <p>Mostramos apenas perfis com foto e marcados como exibíveis, evitando repetições curtas.</p>
       </details>
 
       <details>
         <summary>É gratuito?</summary>
-        <p style="margin:10px 0 0">Sim. Mantemos gratuito com anúncios leves e responsáveis.</p>
+        <p>Sim. Mantemos o app gratuito com anúncios leves e não invasivos.</p>
       </details>
 
       <details>
         <summary>Posso denunciar um perfil?</summary>
-        <p style="margin:10px 0 0">Sim. Informe o motivo no app. Após análise, o perfil é removido da rotação.</p>
+        <p>Sim. Basta informar o motivo no app — o perfil é removido da rotação.</p>
       </details>
     </div>
   </section>
 
-  <!-- BOTÃO DE PRIVACIDADE PERTO DO RODAPÉ -->
   <div class="bottom-actions">
     <a class="btn-ghost" href="politica.html">Política de Privacidade</a>
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <div>© <span id="y"></span> Me Segue! • Todos os direitos reservados.</div>
+    <div class="container">
+      © <span id="y"></span> Me Segue! • Todos os direitos reservados.
     </div>
   </footer>
 
